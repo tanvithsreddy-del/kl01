@@ -1,0 +1,14 @@
+KL01 public download verification
+UTC 2026-08-22 11:07:50
+
+RELEASE
+{"assets":[{"browser_download_url":"https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.AppImage","name":"KL01.Pre.Beta.AppImage","size":142580143,"state":"uploaded"},{"browser_download_url":"https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.Linux.tar.gz","name":"KL01.Pre.Beta.Linux.tar.gz","size":135032177,"state":"uploaded"},{"browser_download_url":"https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.Portable.exe","name":"KL01.Pre.Beta.Portable.exe","size":112472370,"state":"uploaded"},{"browser_download_url":"https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.Setup.exe","name":"KL01.Pre.Beta.Setup.exe","size":112725556,"state":"uploaded"},{"browser_download_url":"https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.Windows.zip","name":"KL01.Pre.Beta.Windows.zip","size":156081767,"state":"uploaded"}],"draft":false,"html_url":"https://github.com/tanvithsreddy-del/kl01/releases/tag/pre-release","name":"KL01 Pre Release","prerelease":true,"published_at":"2026-08-22T10:52:46Z","tag_name":"pre-release"}
+
+PUBLIC URL CHECKS
+200 https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.AppImage
+200 https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.Linux.tar.gz
+200 https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.Portable.exe
+200 https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.Setup.exe
+200 https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01.Pre.Beta.Windows.zip
+
+RESULT PASS
