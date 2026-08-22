@@ -1,0 +1,1917 @@
+{
+  "version": 5,
+  "curatedAt": "2026-08-17",
+  "curationPolicy": "Expanded pre-beta catalogue independently verified against pinned Hugging Face repository revisions and LFS SHA-256 records.",
+  "entries": [
+    {
+      "id": "lightweight",
+      "kind": "model",
+      "name": "Qwen3 0.6B",
+      "description": "Small and responsive for chat, short study questions and multilingual use.",
+      "plainDescription": "Small and responsive for chat, short study questions and multilingual use.",
+      "size": 639447744,
+      "sizeLabel": "639 MB",
+      "modelId": "unsloth/Qwen3-0.6B-GGUF",
+      "downloadUrl": "https://huggingface.co/unsloth/Qwen3-0.6B-GGUF/resolve/50968a4468ef4233ed78cd7c3de230dd1d61a56b/Qwen3-0.6B-Q8_0.gguf",
+      "filename": "Qwen3-0.6B-Q8_0.gguf",
+      "sha256": "e150ed544dfe6016930c026a93913a5e3184181ebfe6ab2223ae01dd0491784c",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 4294967296,
+      "provenance": "Hugging Face repository unsloth/Qwen3-0.6B-GGUF at revision 50968a4468ef4233ed78cd7c3de230dd1d61a56b",
+      "modelName": "Qwen3 0.6B",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "Qwen/Qwen3-0.6B model card and licence",
+      "providerId": "qwen",
+      "providerName": "Qwen",
+      "family": "Qwen3",
+      "parameterCountB": 0.6,
+      "activeParameterCountB": 0.6,
+      "quantization": "Q8_0",
+      "curationRank": 10,
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "reasoning",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "limitations": "Text-only in this KL01 build. Use Research for current facts; this small model is not reliable enough for high-stakes advice.",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "capable",
+        "writing": "capable",
+        "summarisation": "basic",
+        "reasoning": "basic",
+        "coding": "basic",
+        "multilingual": "strong",
+        "longDocuments": "basic"
+      },
+      "bestFor": [
+        "Fast chat",
+        "Short explanations",
+        "Multilingual questions"
+      ],
+      "notIdealFor": [
+        "High-stakes advice",
+        "Large codebases",
+        "Long documents"
+      ],
+      "reasoningControl": {
+        "enabled": true,
+        "style": "hybrid",
+        "defaultLevel": "standard",
+        "startsInReasoning": false,
+        "levels": {
+          "off": 0,
+          "quick": 256,
+          "standard": 640,
+          "deep": 1200
+        },
+        "description": "Choose how much private scratch work the model may use before its final answer."
+      },
+      "licenceUrl": "https://huggingface.co/Qwen/Qwen3-0.6B/blob/main/LICENSE",
+      "licenceAcceptanceRequired": false
+    },
+    {
+      "id": "balanced",
+      "kind": "model",
+      "name": "Qwen3 1.7B Q4",
+      "description": "A compact everyday model with a better balance of study help, coding and reasoning.",
+      "plainDescription": "A compact everyday model with a better balance of study help, coding and reasoning.",
+      "size": 1282439264,
+      "sizeLabel": "1.28 GB",
+      "modelId": "ggml-org/Qwen3-1.7B-GGUF",
+      "downloadUrl": "https://huggingface.co/ggml-org/Qwen3-1.7B-GGUF/resolve/daeb8e2d528a760970442092f6bf1e55c3b659eb/Qwen3-1.7B-Q4_K_M.gguf",
+      "filename": "Qwen3-1.7B-Q4_K_M.gguf",
+      "sha256": "d2387ca2dbfee2ffabce7120d3770dadca0b293052bc2f0e138fdc940d9bc7b5",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 5368709120,
+      "provenance": "Hugging Face repository ggml-org/Qwen3-1.7B-GGUF at revision daeb8e2d528a760970442092f6bf1e55c3b659eb",
+      "modelName": "Qwen3 1.7B",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "Qwen/Qwen3-1.7B model card and licence",
+      "providerId": "qwen",
+      "providerName": "Qwen",
+      "family": "Qwen3",
+      "parameterCountB": 1.7,
+      "activeParameterCountB": 1.7,
+      "quantization": "Q4_K_M",
+      "curationRank": 20,
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "reasoning",
+          "coding",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "limitations": "Text-only in this KL01 build. Use Research for current facts and verify high-stakes advice.",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "strong",
+        "summarisation": "capable",
+        "reasoning": "capable",
+        "coding": "capable",
+        "multilingual": "strong",
+        "longDocuments": "basic"
+      },
+      "bestFor": [
+        "Everyday chat",
+        "Study help",
+        "Light coding"
+      ],
+      "notIdealFor": [
+        "High-stakes advice",
+        "Very long documents",
+        "Complex multi-step analysis"
+      ],
+      "reasoningControl": {
+        "enabled": true,
+        "style": "hybrid",
+        "defaultLevel": "standard",
+        "startsInReasoning": false,
+        "levels": {
+          "off": 0,
+          "quick": 256,
+          "standard": 640,
+          "deep": 1200
+        },
+        "description": "Choose how much private scratch work the model may use before its final answer."
+      },
+      "licenceUrl": "https://huggingface.co/Qwen/Qwen3-1.7B/blob/main/LICENSE",
+      "licenceAcceptanceRequired": false
+    },
+    {
+      "id": "powerful",
+      "kind": "model",
+      "name": "Qwen3 4B Q4",
+      "description": "The strongest bundled recommendation for deeper explanations, coding and longer analysis on capable PCs.",
+      "plainDescription": "The strongest bundled recommendation for deeper explanations, coding and longer analysis on capable PCs.",
+      "size": 2497281312,
+      "sizeLabel": "2.50 GB",
+      "modelId": "unsloth/Qwen3-4B-GGUF",
+      "downloadUrl": "https://huggingface.co/unsloth/Qwen3-4B-GGUF/resolve/22c9fc8a8c7700b76a1789366280a6a5a1ad1120/Qwen3-4B-Q4_K_M.gguf",
+      "filename": "Qwen3-4B-Q4_K_M.gguf",
+      "sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 8589934592,
+      "provenance": "Hugging Face repository unsloth/Qwen3-4B-GGUF at revision 22c9fc8a8c7700b76a1789366280a6a5a1ad1120",
+      "modelName": "Qwen3 4B",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "Qwen/Qwen3-4B model card and licence",
+      "providerId": "qwen",
+      "providerName": "Qwen",
+      "family": "Qwen3",
+      "parameterCountB": 4,
+      "activeParameterCountB": 4,
+      "quantization": "Q4_K_M",
+      "curationRank": 30,
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "reasoning",
+          "coding",
+          "multilingual",
+          "long-context"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "limitations": "Text-only in this KL01 build. Use Research for current facts and verify medical, legal or financial guidance.",
+      "primaryType": "reasoning",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "strong",
+        "summarisation": "strong",
+        "reasoning": "strong",
+        "coding": "strong",
+        "multilingual": "strong",
+        "longDocuments": "capable"
+      },
+      "bestFor": [
+        "Detailed study help",
+        "Coding",
+        "Deeper analysis"
+      ],
+      "notIdealFor": [
+        "Low-memory PCs",
+        "Professional high-stakes decisions"
+      ],
+      "reasoningControl": {
+        "enabled": true,
+        "style": "hybrid",
+        "defaultLevel": "standard",
+        "startsInReasoning": false,
+        "levels": {
+          "off": 0,
+          "quick": 384,
+          "standard": 768,
+          "deep": 1600
+        },
+        "description": "Choose how much private scratch work the model may use before its final answer."
+      },
+      "licenceUrl": "https://huggingface.co/Qwen/Qwen3-4B/blob/main/LICENSE",
+      "licenceAcceptanceRequired": false
+    },
+    {
+      "id": "llama-3.2-3b-q4-1",
+      "kind": "model",
+      "name": "Llama 3.2 3B",
+      "description": "A larger Meta model for general writing, reasoning and longer conversations.",
+      "plainDescription": "A larger Meta model for general writing, reasoning and longer conversations.",
+      "size": 2093351360,
+      "sizeLabel": "2.09 GB",
+      "modelId": "unsloth/Llama-3.2-3B-Instruct-GGUF",
+      "downloadUrl": "https://huggingface.co/unsloth/Llama-3.2-3B-Instruct-GGUF/resolve/e7d0997e49c9cb00d88b4c1a6a16aa894b0bbc31/Llama-3.2-3B-Instruct-Q4_1.gguf",
+      "filename": "Llama-3.2-3B-Instruct-Q4_1.gguf",
+      "contextSize": 8192,
+      "minimumRam": 8589934592,
+      "provenance": "Hugging Face repository unsloth/Llama-3.2-3B-Instruct-GGUF at revision e7d0997e49c9cb00d88b4c1a6a16aa894b0bbc31",
+      "modelName": "Llama 3.2 3B",
+      "licence": "Llama 3.2 Community License",
+      "licenceProvenance": "meta-llama/Llama-3.2-3B model card",
+      "providerId": "meta",
+      "providerName": "Meta",
+      "family": "Llama 3.2",
+      "parameterCountB": 3.21,
+      "activeParameterCountB": 3.21,
+      "quantization": "Q4_1",
+      "nativeContextSize": 131072,
+      "curationRank": 35,
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "reasoning",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "primaryType": "writing",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "strong",
+        "summarisation": "strong",
+        "reasoning": "capable",
+        "coding": "basic",
+        "multilingual": "capable",
+        "longDocuments": "strong"
+      },
+      "bestFor": [
+        "Writing",
+        "Summaries",
+        "Longer conversations"
+      ],
+      "notIdealFor": [
+        "Specialist coding",
+        "Heavy formal reasoning"
+      ],
+      "licenceUrl": "https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/blob/main/LICENSE.txt",
+      "licenceAcceptanceRequired": true,
+      "sha256": "cbe13240e7f30b7c332e194efeda636c34c8afd424a27e81bda8fc848599807b"
+    },
+    {
+      "id": "unsloth/gemma-3-1b-it-GGUF",
+      "kind": "model",
+      "name": "Gemma-3-1b",
+      "description": "A small model for everyday writing, summaries and questions.",
+      "plainDescription": "A small model for everyday writing, summaries and questions.",
+      "size": 1069306400,
+      "downloadUrl": "https://huggingface.co/unsloth/gemma-3-1b-it-GGUF/resolve/f0b45be0aac41bd6a100a4b5734cad5f67255bfb/gemma-3-1b-it-Q8_0.gguf",
+      "filename": "gemma-3-1b-it-Q8_0.gguf",
+      "contextSize": 8192,
+      "minimumRam": 5368709120,
+      "provenance": "Hugging Face repository unsloth/gemma-3-1b-it-GGUF at revision f0b45be0aac41bd6a100a4b5734cad5f67255bfb",
+      "licence": "Gemma Terms of Use",
+      "licenceProvenance": "google/gemma-3-1b-it model card",
+      "providerId": "google",
+      "providerName": "Google",
+      "family": "Gemma 3",
+      "parameterCountB": 1,
+      "activeParameterCountB": 1,
+      "quantization": "Q8_0",
+      "nativeContextSize": 32768,
+      "curationRank": 40,
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "sizeLabel": "1.07 GB",
+      "primaryType": "writing",
+      "capabilityCriteria": {
+        "chat": "capable",
+        "writing": "capable",
+        "summarisation": "capable",
+        "reasoning": "basic",
+        "coding": "not-focused",
+        "multilingual": "capable",
+        "longDocuments": "basic"
+      },
+      "bestFor": [
+        "Everyday writing",
+        "Short summaries",
+        "Simple questions"
+      ],
+      "notIdealFor": [
+        "Advanced coding",
+        "Complex reasoning"
+      ],
+      "licenceUrl": "https://ai.google.dev/gemma/terms",
+      "licenceAcceptanceRequired": true,
+      "sha256": "616dfb049ad14288d971d96f5ca4953fdebbf1e3cd407ad159f3bfd47090201d",
+      "modelId": "unsloth/gemma-3-1b-it-GGUF"
+    },
+    {
+      "id": "unsloth/Qwen3-1.7B-GGUF",
+      "kind": "model",
+      "name": "Qwen3-1.7B",
+      "description": "A capable general model for writing, reasoning and study help.",
+      "plainDescription": "A capable general model for writing, reasoning and study help.",
+      "size": 1834426944,
+      "downloadUrl": "https://huggingface.co/unsloth/Qwen3-1.7B-GGUF/resolve/d7f544eead698dbd1f15126ef60b45a1e1933222/Qwen3-1.7B-Q8_0.gguf",
+      "filename": "Qwen3-1.7B-Q8_0.gguf",
+      "contextSize": 8192,
+      "minimumRam": 6442450944,
+      "provenance": "Hugging Face repository unsloth/Qwen3-1.7B-GGUF at revision d7f544eead698dbd1f15126ef60b45a1e1933222",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "Qwen/Qwen3-1.7B model card",
+      "providerId": "qwen",
+      "providerName": "Qwen",
+      "family": "Qwen3",
+      "parameterCountB": 2.03,
+      "activeParameterCountB": 2.03,
+      "quantization": "Q8_0",
+      "nativeContextSize": 32768,
+      "curationRank": 50,
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "reasoning",
+          "coding",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "sizeLabel": "1.83 GB",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "strong",
+        "summarisation": "capable",
+        "reasoning": "capable",
+        "coding": "capable",
+        "multilingual": "strong",
+        "longDocuments": "basic"
+      },
+      "bestFor": [
+        "General chat",
+        "Study help",
+        "Light coding"
+      ],
+      "notIdealFor": [
+        "Very long context",
+        "Difficult expert tasks"
+      ],
+      "reasoningControl": {
+        "enabled": true,
+        "style": "hybrid",
+        "defaultLevel": "standard",
+        "startsInReasoning": false,
+        "levels": {
+          "off": 0,
+          "quick": 256,
+          "standard": 640,
+          "deep": 1200
+        },
+        "description": "Choose how much private scratch work the model may use before its final answer."
+      },
+      "licenceUrl": "https://huggingface.co/Qwen/Qwen3-1.7B/blob/main/LICENSE",
+      "licenceAcceptanceRequired": false,
+      "sha256": "0becaa825564295d82e9af4d008bca5f8b7f5f73bf1c6a0b58f7c53ef26b47fd",
+      "modelId": "unsloth/Qwen3-1.7B-GGUF"
+    },
+    {
+      "id": "unsloth/Llama-3.2-1B-Instruct-GGUF",
+      "kind": "model",
+      "name": "Llama 3.2 1B",
+      "description": "A compact general model for short writing and questions.",
+      "plainDescription": "A compact general model for short writing and questions.",
+      "size": 1321082528,
+      "downloadUrl": "https://huggingface.co/unsloth/Llama-3.2-1B-Instruct-GGUF/resolve/b69aef112e9f895e6f98d7ae0949f72ff09aa401/Llama-3.2-1B-Instruct-Q8_0.gguf",
+      "filename": "Llama-3.2-1B-Instruct-Q8_0.gguf",
+      "contextSize": 8192,
+      "minimumRam": 5368709120,
+      "provenance": "Hugging Face repository unsloth/Llama-3.2-1B-Instruct-GGUF at revision b69aef112e9f895e6f98d7ae0949f72ff09aa401",
+      "licence": "Llama 3.2 Community License",
+      "licenceProvenance": "meta-llama/Llama-3.2-1B model card",
+      "providerId": "meta",
+      "providerName": "Meta",
+      "family": "Llama 3.2",
+      "parameterCountB": 1.24,
+      "activeParameterCountB": 1.24,
+      "quantization": "Q8_0",
+      "nativeContextSize": 131072,
+      "curationRank": 60,
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "sizeLabel": "1.32 GB",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "capable",
+        "writing": "capable",
+        "summarisation": "basic",
+        "reasoning": "basic",
+        "coding": "not-focused",
+        "multilingual": "capable",
+        "longDocuments": "basic"
+      },
+      "bestFor": [
+        "Quick chat",
+        "Short writing",
+        "Simple summaries"
+      ],
+      "notIdealFor": [
+        "Deep reasoning",
+        "Large files"
+      ],
+      "licenceUrl": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct/blob/main/LICENSE.txt",
+      "licenceAcceptanceRequired": true,
+      "sha256": "3f87a880027e7b9ea8e0da9e4009584336f352af444a0e6e5c20721ac4c7ffd1",
+      "modelId": "unsloth/Llama-3.2-1B-Instruct-GGUF"
+    },
+    {
+      "id": "Menlo/Lucy-gguf",
+      "kind": "model",
+      "name": "Lucy 1.7B",
+      "description": "A compact model made for running directly on personal devices.",
+      "plainDescription": "A compact model made for running directly on personal devices.",
+      "size": 1834427584,
+      "downloadUrl": "https://huggingface.co/Menlo/Lucy-gguf/resolve/52a923a274b3d3698c0e18ce8b389fbb86bad439/Lucy-Q8_0.gguf",
+      "filename": "Lucy-Q8_0.gguf",
+      "contextSize": 8192,
+      "minimumRam": 6442450944,
+      "provenance": "Hugging Face repository Menlo/Lucy-gguf at revision 52a923a274b3d3698c0e18ce8b389fbb86bad439",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "Menlo/Lucy-gguf model card",
+      "providerId": "menlo",
+      "providerName": "Menlo",
+      "family": "Lucy",
+      "parameterCountB": 1.7,
+      "activeParameterCountB": 1.7,
+      "quantization": "Q8_0",
+      "nativeContextSize": 8192,
+      "curationRank": 70,
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "sizeLabel": "1.83 GB",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "capable",
+        "writing": "capable",
+        "summarisation": "basic",
+        "reasoning": "basic",
+        "coding": "basic",
+        "multilingual": "basic",
+        "longDocuments": "basic"
+      },
+      "bestFor": [
+        "Everyday chat",
+        "Short instructions",
+        "Private offline use"
+      ],
+      "notIdealFor": [
+        "Complex reasoning",
+        "Large coding tasks"
+      ],
+      "licenceUrl": "https://huggingface.co/Menlo/Lucy",
+      "licenceAcceptanceRequired": false,
+      "sha256": "1d7c3c87dbd97a1984ae1c592e641f32ba07522e56276d73c13088116faebaa9",
+      "modelId": "Menlo/Lucy-gguf"
+    },
+    {
+      "id": "hf-smollm2-1.7b-q4",
+      "kind": "model",
+      "name": "SmolLM2 1.7B",
+      "description": "A fast compact model for everyday chat, rewriting and short summaries.",
+      "plainDescription": "A fast compact model for everyday chat, rewriting and short summaries.",
+      "size": 1055609824,
+      "modelId": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "downloadUrl": "https://huggingface.co/bartowski/SmolLM2-1.7B-Instruct-GGUF/resolve/3084dd417b5e2567e786340037cd3b512068fad0/SmolLM2-1.7B-Instruct-Q4_K_M.gguf",
+      "filename": "SmolLM2-1.7B-Instruct-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 8192,
+      "minimumRam": 4294967296,
+      "category": "quick",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository bartowski/SmolLM2-1.7B-Instruct-GGUF at revision 3084dd417b5e2567e786340037cd3b512068fad0",
+      "modelName": "SmolLM2 1.7B Instruct",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "HuggingFaceTB/SmolLM2-1.7B-Instruct model card",
+      "providerId": "hugging-face",
+      "family": "SmolLM2",
+      "parameterCountB": 1.7,
+      "activeParameterCountB": 1.7,
+      "providerName": "Hugging Face",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 80,
+      "sizeLabel": "1.06 GB",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "capable",
+        "writing": "strong",
+        "summarisation": "capable",
+        "reasoning": "basic",
+        "coding": "basic",
+        "multilingual": "capable",
+        "longDocuments": "basic"
+      },
+      "bestFor": [
+        "Fast everyday chat",
+        "Rewriting",
+        "Short summaries"
+      ],
+      "notIdealFor": [
+        "Complex analysis",
+        "Large projects"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "licenceAcceptanceRequired": false,
+      "sha256": "77665ea4815999596525c636fbeb56ba8b080b46ae85efef4f0d986a139834d7"
+    },
+    {
+      "id": "deepseek-r1-qwen-1.5b-q4",
+      "kind": "model",
+      "name": "DeepSeek R1 1.5B",
+      "description": "A small deliberate reasoning model for maths, logic and step-by-step problems.",
+      "plainDescription": "A small deliberate reasoning model for maths, logic and step-by-step problems.",
+      "size": 1117321312,
+      "modelId": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+      "downloadUrl": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-1.5B-GGUF/resolve/d9b3ad53cecdc746a4b8261a8a5dc5a53caebaca/DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf",
+      "filename": "DeepSeek-R1-Distill-Qwen-1.5B-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 4294967296,
+      "category": "reasoning",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository unsloth/DeepSeek-R1-Distill-Qwen-1.5B-GGUF at revision d9b3ad53cecdc746a4b8261a8a5dc5a53caebaca",
+      "modelName": "DeepSeek R1 Distill Qwen 1.5B",
+      "licence": "MIT",
+      "licenceProvenance": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B model card",
+      "providerId": "deepseek",
+      "family": "DeepSeek R1 Distill",
+      "parameterCountB": 1.5,
+      "activeParameterCountB": 1.5,
+      "providerName": "DeepSeek",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "reasoning",
+          "coding",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 90,
+      "sizeLabel": "1.12 GB",
+      "primaryType": "reasoning",
+      "capabilityCriteria": {
+        "chat": "basic",
+        "writing": "not-focused",
+        "summarisation": "basic",
+        "reasoning": "strong",
+        "coding": "capable",
+        "multilingual": "capable",
+        "longDocuments": "basic"
+      },
+      "bestFor": [
+        "Maths",
+        "Logic",
+        "Step-by-step problems"
+      ],
+      "notIdealFor": [
+        "Polished prose",
+        "Long conversational chat"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "reasoningControl": {
+        "enabled": true,
+        "style": "deliberate",
+        "defaultLevel": "standard",
+        "startsInReasoning": true,
+        "levels": {
+          "off": 0,
+          "quick": 256,
+          "standard": 640,
+          "deep": 1200
+        },
+        "description": "Limit the model’s reasoning budget. Reasoning is shown separately from the final answer."
+      },
+      "licenceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+      "licenceAcceptanceRequired": false,
+      "sha256": "f3bdf9cf31dee4b57ae4e455a1cb0d01b5c2c1b50d72d3112141c195506c2840"
+    },
+    {
+      "id": "granite-3.3-2b-q4",
+      "kind": "model",
+      "name": "Granite 3.3 2B",
+      "description": "A compact IBM model for documents, instructions, retrieval and business writing.",
+      "plainDescription": "A compact IBM model for documents, instructions, retrieval and business writing.",
+      "size": 1545303616,
+      "modelId": "ibm-granite/granite-3.3-2b-instruct",
+      "downloadUrl": "https://huggingface.co/bartowski/ibm-granite_granite-3.3-2b-instruct-GGUF/resolve/8d7b543328a12567370edf34c808f55c0656d855/ibm-granite_granite-3.3-2b-instruct-Q4_K_M.gguf",
+      "filename": "ibm-granite_granite-3.3-2b-instruct-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 131072,
+      "minimumRam": 5368709120,
+      "category": "long-context",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository bartowski/ibm-granite_granite-3.3-2b-instruct-GGUF at revision 8d7b543328a12567370edf34c808f55c0656d855",
+      "modelName": "Granite 3.3 2B Instruct",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "ibm-granite/granite-3.3-2b-instruct model card",
+      "providerId": "ibm",
+      "family": "Granite 3.3",
+      "parameterCountB": 2,
+      "activeParameterCountB": 2,
+      "providerName": "IBM",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "reasoning",
+          "coding",
+          "long-context"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 100,
+      "sizeLabel": "1.55 GB",
+      "primaryType": "long-context",
+      "capabilityCriteria": {
+        "chat": "capable",
+        "writing": "capable",
+        "summarisation": "strong",
+        "reasoning": "capable",
+        "coding": "capable",
+        "multilingual": "capable",
+        "longDocuments": "strong"
+      },
+      "bestFor": [
+        "Documents",
+        "Retrieval tasks",
+        "Business writing"
+      ],
+      "notIdealFor": [
+        "Creative conversation",
+        "Very difficult reasoning"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/ibm-granite/granite-3.3-2b-instruct",
+      "licenceAcceptanceRequired": false,
+      "sha256": "555b91485955bc96eb445b57dd4bbf8809aa7d8cce7c313f4f8bc5b2340896b4"
+    },
+    {
+      "id": "exaone-3.5-2.4b-q4",
+      "kind": "model",
+      "name": "EXAONE 3.5 2.4B",
+      "description": "A compact bilingual-friendly general model from LG AI Research.",
+      "plainDescription": "A compact bilingual-friendly general model from LG AI Research.",
+      "size": 1644918816,
+      "modelId": "LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct",
+      "downloadUrl": "https://huggingface.co/bartowski/EXAONE-3.5-2.4B-Instruct-GGUF/resolve/25f457116598f2bcbd3a97b4286b49ad28e70848/EXAONE-3.5-2.4B-Instruct-Q4_K_M.gguf",
+      "filename": "EXAONE-3.5-2.4B-Instruct-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 5368709120,
+      "category": "general",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository bartowski/EXAONE-3.5-2.4B-Instruct-GGUF at revision 25f457116598f2bcbd3a97b4286b49ad28e70848",
+      "modelName": "EXAONE 3.5 2.4B Instruct",
+      "licence": "EXAONE AI Model License Agreement 1.1 - NC",
+      "licenceProvenance": "LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct model card",
+      "providerId": "lg-ai-research",
+      "family": "EXAONE 3.5",
+      "parameterCountB": 2.4,
+      "activeParameterCountB": 2.4,
+      "providerName": "LG AI Research",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "reasoning",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 110,
+      "sizeLabel": "1.64 GB",
+      "primaryType": "multilingual",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "capable",
+        "summarisation": "capable",
+        "reasoning": "capable",
+        "coding": "basic",
+        "multilingual": "strong",
+        "longDocuments": "capable"
+      },
+      "bestFor": [
+        "Bilingual chat",
+        "General questions",
+        "Instruction following"
+      ],
+      "notIdealFor": [
+        "Specialist coding",
+        "Heavy formal reasoning"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/LGAI-EXAONE/EXAONE-3.5-2.4B-Instruct-GGUF/blob/main/LICENSE",
+      "licenceAcceptanceRequired": true,
+      "sha256": "d697402c44f2cadcd55c64f4a244c1852de764caa55cb7347904be97994f87ae"
+    },
+    {
+      "id": "smollm3-3b-q4",
+      "kind": "model",
+      "name": "SmolLM3 3B",
+      "description": "A compact multilingual model with stronger reasoning and long-document support.",
+      "plainDescription": "A compact multilingual model with stronger reasoning and long-document support.",
+      "size": 1915306528,
+      "modelId": "HuggingFaceTB/SmolLM3-3B",
+      "downloadUrl": "https://huggingface.co/unsloth/SmolLM3-3B-GGUF/resolve/00d7d77a06c41ed9d15f4499d01bd80554450b5c/SmolLM3-3B-Q4_K_M.gguf",
+      "filename": "SmolLM3-3B-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 65536,
+      "minimumRam": 5368709120,
+      "category": "long-context",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository unsloth/SmolLM3-3B-GGUF at revision 00d7d77a06c41ed9d15f4499d01bd80554450b5c",
+      "modelName": "SmolLM3 3B",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "HuggingFaceTB/SmolLM3-3B model card",
+      "providerId": "hugging-face",
+      "family": "SmolLM3",
+      "parameterCountB": 3,
+      "activeParameterCountB": 3,
+      "providerName": "Hugging Face",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "reasoning",
+          "coding",
+          "multilingual",
+          "long-context"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 120,
+      "sizeLabel": "1.92 GB",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "strong",
+        "summarisation": "strong",
+        "reasoning": "strong",
+        "coding": "capable",
+        "multilingual": "strong",
+        "longDocuments": "strong"
+      },
+      "bestFor": [
+        "General work",
+        "Reasoning",
+        "Longer documents"
+      ],
+      "notIdealFor": [
+        "Very large codebases",
+        "Highest-accuracy tasks"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/HuggingFaceTB/SmolLM3-3B",
+      "licenceAcceptanceRequired": false,
+      "sha256": "4de907d2d388a5508fb7cb443a06effe14cce3518b0a78d3bdd9e74d9edce989"
+    },
+    {
+      "id": "qwen2.5-coder-3b-q4",
+      "kind": "model",
+      "name": "Qwen2.5 Coder 3B",
+      "description": "A small specialist for code generation, explanation, debugging and edits.",
+      "plainDescription": "A small specialist for code generation, explanation, debugging and edits.",
+      "size": 1929902496,
+      "modelId": "Qwen/Qwen2.5-Coder-3B-Instruct",
+      "downloadUrl": "https://huggingface.co/unsloth/Qwen2.5-Coder-3B-Instruct-GGUF/resolve/bce353a4028082bcb3eb14d91aa44f624dd7f539/Qwen2.5-Coder-3B-Instruct-Q4_K_M.gguf",
+      "filename": "Qwen2.5-Coder-3B-Instruct-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 5368709120,
+      "category": "coding",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository unsloth/Qwen2.5-Coder-3B-Instruct-GGUF at revision bce353a4028082bcb3eb14d91aa44f624dd7f539",
+      "modelName": "Qwen2.5 Coder 3B Instruct",
+      "licence": "Qwen Research License",
+      "licenceProvenance": "Qwen/Qwen2.5-Coder-3B-Instruct model card",
+      "providerId": "qwen",
+      "family": "Qwen2.5 Coder",
+      "parameterCountB": 3.09,
+      "activeParameterCountB": 3.09,
+      "providerName": "Qwen",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "coding",
+          "reasoning",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 130,
+      "sizeLabel": "1.93 GB",
+      "primaryType": "coding",
+      "capabilityCriteria": {
+        "chat": "capable",
+        "writing": "basic",
+        "summarisation": "capable",
+        "reasoning": "capable",
+        "coding": "focused",
+        "multilingual": "capable",
+        "longDocuments": "capable"
+      },
+      "bestFor": [
+        "Code generation",
+        "Debugging",
+        "Code explanation"
+      ],
+      "notIdealFor": [
+        "Creative writing",
+        "Nontechnical conversation"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/Qwen/Qwen2.5-Coder-3B-Instruct",
+      "licenceAcceptanceRequired": true,
+      "sha256": "32f0014400ca1c1f81e7fb5befa9b9af476ba967dcbf92bad27409228c57c5b4"
+    },
+    {
+      "id": "falcon3-3b-q4",
+      "kind": "model",
+      "name": "Falcon3 3B",
+      "description": "A compact general and coding model from the Technology Innovation Institute.",
+      "plainDescription": "A compact general and coding model from the Technology Innovation Institute.",
+      "size": 2005684480,
+      "modelId": "tiiuae/Falcon3-3B-Instruct",
+      "downloadUrl": "https://huggingface.co/bartowski/Falcon3-3B-Instruct-GGUF/resolve/371ed61581235b851ffd94f855d85de4b1ef921f/Falcon3-3B-Instruct-Q4_K_M.gguf",
+      "filename": "Falcon3-3B-Instruct-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 5368709120,
+      "category": "general",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository bartowski/Falcon3-3B-Instruct-GGUF at revision 371ed61581235b851ffd94f855d85de4b1ef921f",
+      "modelName": "Falcon3 3B Instruct",
+      "licence": "TII Falcon-LLM License 2.0",
+      "licenceProvenance": "tiiuae/Falcon3-3B-Instruct model card",
+      "providerId": "tii",
+      "family": "Falcon3",
+      "parameterCountB": 3,
+      "activeParameterCountB": 3,
+      "providerName": "TII",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "reasoning",
+          "coding",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 140,
+      "sizeLabel": "2.01 GB",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "capable",
+        "summarisation": "capable",
+        "reasoning": "capable",
+        "coding": "capable",
+        "multilingual": "capable",
+        "longDocuments": "capable"
+      },
+      "bestFor": [
+        "General chat",
+        "Coding help",
+        "Instructions"
+      ],
+      "notIdealFor": [
+        "Very long documents",
+        "Advanced reasoning"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/tiiuae/Falcon3-3B-Instruct",
+      "licenceAcceptanceRequired": true,
+      "sha256": "6ea6cecba144fe5b711ca07ae4263ccdf6ee6419807a46220419189da8446557"
+    },
+    {
+      "id": "gemma-3-4b-q4",
+      "kind": "model",
+      "name": "Gemma 3 4B",
+      "description": "A stronger multilingual Google model for writing, summaries and long documents.",
+      "plainDescription": "A stronger multilingual Google model for writing, summaries and long documents.",
+      "size": 2489894016,
+      "modelId": "google/gemma-3-4b-it",
+      "downloadUrl": "https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/19a2c3eb5d991abefc948cb935dc4060bab56f20/gemma-3-4b-it-Q4_K_M.gguf",
+      "filename": "gemma-3-4b-it-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 131072,
+      "minimumRam": 6442450944,
+      "category": "long-context",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository unsloth/gemma-3-4b-it-GGUF at revision 19a2c3eb5d991abefc948cb935dc4060bab56f20",
+      "modelName": "Gemma 3 4B IT",
+      "licence": "Gemma Terms of Use",
+      "licenceProvenance": "google/gemma-3-4b-it model card",
+      "providerId": "google",
+      "family": "Gemma 3",
+      "parameterCountB": 4.3,
+      "activeParameterCountB": 4.3,
+      "providerName": "Google",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "reasoning",
+          "multilingual",
+          "long-context"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 150,
+      "sizeLabel": "2.49 GB",
+      "primaryType": "long-context",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "strong",
+        "summarisation": "strong",
+        "reasoning": "capable",
+        "coding": "capable",
+        "multilingual": "strong",
+        "longDocuments": "strong"
+      },
+      "bestFor": [
+        "Writing",
+        "Summaries",
+        "Long documents"
+      ],
+      "notIdealFor": [
+        "Image understanding in this build",
+        "Specialist code agents"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://ai.google.dev/gemma/terms",
+      "licenceAcceptanceRequired": true,
+      "sha256": "21c4c7e40dc8c3d1aa8ad38688020aa27c1977e9e6d22010e753d9d6d64aff11"
+    },
+    {
+      "id": "phi-4-mini-q4",
+      "kind": "model",
+      "name": "Phi-4 Mini",
+      "description": "A compact Microsoft model tuned for reasoning, maths, instructions and code.",
+      "plainDescription": "A compact Microsoft model tuned for reasoning, maths, instructions and code.",
+      "size": 2491874272,
+      "modelId": "microsoft/Phi-4-mini-instruct",
+      "downloadUrl": "https://huggingface.co/unsloth/Phi-4-mini-instruct-GGUF/resolve/78eb92a46fc37e6b524df991ed9aca9bc6aa7b80/Phi-4-mini-instruct-Q4_K_M.gguf",
+      "filename": "Phi-4-mini-instruct-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 131072,
+      "minimumRam": 6442450944,
+      "category": "reasoning",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository unsloth/Phi-4-mini-instruct-GGUF at revision 78eb92a46fc37e6b524df991ed9aca9bc6aa7b80",
+      "modelName": "Phi-4 Mini Instruct",
+      "licence": "MIT",
+      "licenceProvenance": "microsoft/Phi-4-mini-instruct model card",
+      "providerId": "microsoft",
+      "family": "Phi-4",
+      "parameterCountB": 3.8,
+      "activeParameterCountB": 3.8,
+      "providerName": "Microsoft",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "reasoning",
+          "coding",
+          "long-context"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 160,
+      "sizeLabel": "2.49 GB",
+      "primaryType": "reasoning",
+      "capabilityCriteria": {
+        "chat": "capable",
+        "writing": "capable",
+        "summarisation": "capable",
+        "reasoning": "focused",
+        "coding": "strong",
+        "multilingual": "capable",
+        "longDocuments": "strong"
+      },
+      "bestFor": [
+        "Maths",
+        "Reasoning",
+        "Instructions and code"
+      ],
+      "notIdealFor": [
+        "Creative prose",
+        "Image or audio input"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/microsoft/Phi-4-mini-instruct/blob/main/LICENSE",
+      "licenceAcceptanceRequired": false,
+      "sha256": "88c00229914083cd112853aab84ed51b87bdf6b9ce42f532d8c85c7c63b1730a"
+    },
+    {
+      "id": "qwen3-4b-instruct-2507-q4",
+      "kind": "model",
+      "name": "Qwen3 4B Instruct",
+      "description": "A modern multilingual general model with strong instruction following and long context.",
+      "plainDescription": "A modern multilingual general model with strong instruction following and long context.",
+      "size": 2497281120,
+      "modelId": "Qwen/Qwen3-4B-Instruct-2507",
+      "downloadUrl": "https://huggingface.co/unsloth/Qwen3-4B-Instruct-2507-GGUF/resolve/bf25fdde93ce49fafb4486a1ae7dc4b840d672be/Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+      "filename": "Qwen3-4B-Instruct-2507-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 262144,
+      "minimumRam": 6442450944,
+      "category": "long-context",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository unsloth/Qwen3-4B-Instruct-2507-GGUF at revision bf25fdde93ce49fafb4486a1ae7dc4b840d672be",
+      "modelName": "Qwen3 4B Instruct 2507",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "Qwen/Qwen3-4B-Instruct-2507 model card",
+      "providerId": "qwen",
+      "family": "Qwen3",
+      "parameterCountB": 4,
+      "activeParameterCountB": 4,
+      "providerName": "Qwen",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "reasoning",
+          "coding",
+          "multilingual",
+          "long-context"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 170,
+      "sizeLabel": "2.50 GB",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "strong",
+        "summarisation": "strong",
+        "reasoning": "strong",
+        "coding": "strong",
+        "multilingual": "focused",
+        "longDocuments": "focused"
+      },
+      "bestFor": [
+        "General work",
+        "Coding",
+        "Multilingual long documents"
+      ],
+      "notIdealFor": [
+        "Image or audio input",
+        "Very weak computers"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/blob/main/LICENSE",
+      "licenceAcceptanceRequired": false,
+      "sha256": "3605803b982cb64aead44f6c1b2ae36e3acdb41d8e46c8a94c6533bc4c67e597"
+    },
+    {
+      "id": "mistral-7b-instruct-v03-q4",
+      "kind": "model",
+      "name": "Mistral 7B Instruct",
+      "description": "A mature general-purpose Mistral model with reliable instruction following.",
+      "plainDescription": "A mature general-purpose Mistral model with reliable instruction following.",
+      "size": 4372812000,
+      "modelId": "mistralai/Mistral-7B-Instruct-v0.3",
+      "downloadUrl": "https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF/resolve/61fd4167fff3ab01ee1cfe0da183fa27a944db48/Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+      "filename": "Mistral-7B-Instruct-v0.3-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 9663676416,
+      "category": "general",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository bartowski/Mistral-7B-Instruct-v0.3-GGUF at revision 61fd4167fff3ab01ee1cfe0da183fa27a944db48",
+      "modelName": "Mistral 7B Instruct v0.3",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "mistralai/Mistral-7B-Instruct-v0.3 model card",
+      "sha256": "1270d22c0fbb3d092fb725d4d96c457b7b687a5f5a715abe1e818da303e562b6",
+      "providerId": "mistral",
+      "family": "Mistral 7B",
+      "parameterCountB": 7.3,
+      "activeParameterCountB": 7.3,
+      "providerName": "Mistral AI",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "reasoning",
+          "coding",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 180,
+      "sizeLabel": "4.37 GB",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "strong",
+        "summarisation": "strong",
+        "reasoning": "capable",
+        "coding": "capable",
+        "multilingual": "capable",
+        "longDocuments": "capable"
+      },
+      "bestFor": [
+        "Reliable instructions",
+        "Writing",
+        "General chat"
+      ],
+      "notIdealFor": [
+        "Weak computers",
+        "Very long documents"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3",
+      "licenceAcceptanceRequired": false
+    },
+    {
+      "id": "deepseek-r1-qwen-7b-q4",
+      "kind": "model",
+      "name": "DeepSeek R1 7B",
+      "description": "A larger deliberate reasoning model for difficult maths, logic and analysis.",
+      "plainDescription": "A larger deliberate reasoning model for difficult maths, logic and analysis.",
+      "size": 4683073248,
+      "modelId": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "downloadUrl": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF/resolve/a0e93ce6804eb82fedfd4eed8991948654eec8eb/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf",
+      "filename": "DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 10737418240,
+      "category": "reasoning",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF at revision a0e93ce6804eb82fedfd4eed8991948654eec8eb",
+      "modelName": "DeepSeek R1 Distill Qwen 7B",
+      "licence": "MIT",
+      "licenceProvenance": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B model card",
+      "providerId": "deepseek",
+      "family": "DeepSeek R1 Distill",
+      "parameterCountB": 7.6,
+      "activeParameterCountB": 7.6,
+      "providerName": "DeepSeek",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "reasoning",
+          "coding",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 190,
+      "sizeLabel": "4.68 GB",
+      "primaryType": "reasoning",
+      "capabilityCriteria": {
+        "chat": "basic",
+        "writing": "not-focused",
+        "summarisation": "capable",
+        "reasoning": "focused",
+        "coding": "strong",
+        "multilingual": "capable",
+        "longDocuments": "capable"
+      },
+      "bestFor": [
+        "Hard maths",
+        "Logic",
+        "Technical analysis"
+      ],
+      "notIdealFor": [
+        "Fast casual chat",
+        "Polished creative writing"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "reasoningControl": {
+        "enabled": true,
+        "style": "deliberate",
+        "defaultLevel": "standard",
+        "startsInReasoning": true,
+        "levels": {
+          "off": 0,
+          "quick": 256,
+          "standard": 640,
+          "deep": 1200
+        },
+        "description": "Limit the model’s reasoning budget. Reasoning is shown separately from the final answer."
+      },
+      "licenceUrl": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "licenceAcceptanceRequired": false,
+      "sha256": "78272d8d32084548bd450394a560eb2d70de8232ab96a725769b1f9171235c1c"
+    },
+    {
+      "id": "llama-3.1-8b-instruct-q4",
+      "kind": "model",
+      "name": "Llama 3.1 8B",
+      "description": "A widely supported Meta model for strong general chat and longer documents.",
+      "plainDescription": "A widely supported Meta model for strong general chat and longer documents.",
+      "size": 4920739168,
+      "modelId": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+      "downloadUrl": "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/f778ab6c35b882ed380d033a6405b3b01bfaad09/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "filename": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 131072,
+      "minimumRam": 10737418240,
+      "category": "long-context",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository bartowski/Meta-Llama-3.1-8B-Instruct-GGUF at revision f778ab6c35b882ed380d033a6405b3b01bfaad09",
+      "modelName": "Meta Llama 3.1 8B Instruct",
+      "licence": "Llama 3.1 Community License",
+      "licenceProvenance": "meta-llama/Meta-Llama-3.1-8B-Instruct model card",
+      "providerId": "meta",
+      "family": "Llama 3.1",
+      "parameterCountB": 8.03,
+      "activeParameterCountB": 8.03,
+      "providerName": "Meta",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "reasoning",
+          "coding",
+          "multilingual",
+          "long-context"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 200,
+      "sizeLabel": "4.92 GB",
+      "primaryType": "long-context",
+      "capabilityCriteria": {
+        "chat": "strong",
+        "writing": "strong",
+        "summarisation": "strong",
+        "reasoning": "strong",
+        "coding": "capable",
+        "multilingual": "capable",
+        "longDocuments": "focused"
+      },
+      "bestFor": [
+        "General chat",
+        "Long documents",
+        "Writing"
+      ],
+      "notIdealFor": [
+        "Weak computers",
+        "Native media input"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct/blob/main/LICENSE",
+      "licenceAcceptanceRequired": true,
+      "sha256": "f2be3e1a239c12c9f3f01a962b11fb2807f8032fdb63b0a5502ea42ddef55e44"
+    },
+    {
+      "id": "granite-3.3-8b-q4",
+      "kind": "model",
+      "name": "Granite 3.3 8B",
+      "description": "A larger IBM model for retrieval, documents, tools and structured business tasks.",
+      "plainDescription": "A larger IBM model for retrieval, documents, tools and structured business tasks.",
+      "size": 4942873632,
+      "modelId": "ibm-granite/granite-3.3-8b-instruct",
+      "downloadUrl": "https://huggingface.co/bartowski/ibm-granite_granite-3.3-8b-instruct-GGUF/resolve/e1963992545bed9af2ffb56cd9eb6a6806ba6642/ibm-granite_granite-3.3-8b-instruct-Q4_K_M.gguf",
+      "filename": "ibm-granite_granite-3.3-8b-instruct-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 131072,
+      "minimumRam": 10737418240,
+      "category": "long-context",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository bartowski/ibm-granite_granite-3.3-8b-instruct-GGUF at revision e1963992545bed9af2ffb56cd9eb6a6806ba6642",
+      "modelName": "Granite 3.3 8B Instruct",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "ibm-granite/granite-3.3-8b-instruct model card",
+      "providerId": "ibm",
+      "family": "Granite 3.3",
+      "parameterCountB": 8,
+      "activeParameterCountB": 8,
+      "providerName": "IBM",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "reasoning",
+          "coding",
+          "long-context"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 210,
+      "sizeLabel": "4.94 GB",
+      "primaryType": "long-context",
+      "capabilityCriteria": {
+        "chat": "capable",
+        "writing": "strong",
+        "summarisation": "focused",
+        "reasoning": "strong",
+        "coding": "strong",
+        "multilingual": "capable",
+        "longDocuments": "focused"
+      },
+      "bestFor": [
+        "Retrieval",
+        "Documents",
+        "Structured business tasks"
+      ],
+      "notIdealFor": [
+        "Weak computers",
+        "Creative roleplay"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "licenceUrl": "https://huggingface.co/ibm-granite/granite-3.3-8b-instruct",
+      "licenceAcceptanceRequired": false,
+      "sha256": "758fb00abcec89df5cf02932165daf72f0d0b74db5019dbe9f2b3defb1e9295e"
+    },
+    {
+      "id": "qwen3-8b-q4",
+      "kind": "model",
+      "name": "Qwen3 8B",
+      "description": "A larger multilingual Qwen model for stronger reasoning, writing and coding.",
+      "plainDescription": "A larger multilingual Qwen model for stronger reasoning, writing and coding.",
+      "size": 5027784512,
+      "modelId": "Qwen/Qwen3-8B",
+      "downloadUrl": "https://huggingface.co/unsloth/Qwen3-8B-GGUF/resolve/e3cc303a178be165f7e8dee2b92062ad762fe295/Qwen3-8B-Q4_K_M.gguf",
+      "filename": "Qwen3-8B-Q4_K_M.gguf",
+      "contextSize": 8192,
+      "nativeContextSize": 32768,
+      "minimumRam": 10737418240,
+      "category": "general",
+      "quantization": "Q4_K_M",
+      "modalities": [
+        "text"
+      ],
+      "provenance": "Hugging Face repository unsloth/Qwen3-8B-GGUF at revision e3cc303a178be165f7e8dee2b92062ad762fe295",
+      "modelName": "Qwen3 8B",
+      "licence": "Apache-2.0",
+      "licenceProvenance": "Qwen/Qwen3-8B model card",
+      "providerId": "qwen",
+      "family": "Qwen3",
+      "parameterCountB": 8.2,
+      "activeParameterCountB": 8.2,
+      "providerName": "Qwen",
+      "capabilities": {
+        "inputModalities": [
+          "text"
+        ],
+        "tasks": [
+          "general",
+          "writing",
+          "summarisation",
+          "reasoning",
+          "coding",
+          "multilingual"
+        ],
+        "fileTypes": [
+          "txt",
+          "md",
+          "csv",
+          "json",
+          "js",
+          "ts",
+          "py",
+          "html",
+          "css",
+          "xml",
+          "yaml",
+          "yml",
+          "log"
+        ],
+        "structuredOutput": false
+      },
+      "curationRank": 220,
+      "sizeLabel": "5.03 GB",
+      "primaryType": "general",
+      "capabilityCriteria": {
+        "chat": "focused",
+        "writing": "strong",
+        "summarisation": "strong",
+        "reasoning": "focused",
+        "coding": "strong",
+        "multilingual": "focused",
+        "longDocuments": "capable"
+      },
+      "bestFor": [
+        "Strong general work",
+        "Reasoning",
+        "Coding"
+      ],
+      "notIdealFor": [
+        "Weak computers",
+        "Native media input"
+      ],
+      "limitations": "Text-only in this KL01 build. Images, audio and video are not sent to the model.",
+      "reasoningControl": {
+        "enabled": true,
+        "style": "hybrid",
+        "defaultLevel": "standard",
+        "startsInReasoning": false,
+        "levels": {
+          "off": 0,
+          "quick": 256,
+          "standard": 640,
+          "deep": 1200
+        },
+        "description": "Choose how much private scratch work the model may use before its final answer."
+      },
+      "licenceUrl": "https://huggingface.co/Qwen/Qwen3-8B/blob/main/LICENSE",
+      "licenceAcceptanceRequired": false,
+      "sha256": "120307ba529eb2439d6c430d94104dabd578497bc7bfe7e322b5d9933b449bd4"
+    }
+  ]
+}

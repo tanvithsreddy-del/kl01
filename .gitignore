@@ -1,0 +1,5 @@
+desktop/node_modules/
+desktop/dist/
+desktop/dist-*/
+outputs/
+*.part

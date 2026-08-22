@@ -1,0 +1,19 @@
+{
+  "name": "kl01-desktop",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Konda Labs",
+  "description": "KL01 Pre Beta local-first desktop AI",
+  "desktopName": "KL01 Pre Beta",
+  "main": "main.cjs",
+  "scripts": {
+    "pack:win": "electron-builder --config electron-builder.config.cjs --win nsis portable zip --x64",
+    "pack:linux": "electron-builder --config electron-builder.config.cjs --linux AppImage tar.gz --x64",
+    "pack:mac": "electron-builder --config electron-builder.config.cjs --mac dmg zip --arm64",
+    "pack:dir": "electron-builder --config electron-builder.config.cjs --dir --win --x64"
+  },
+  "devDependencies": {
+    "electron": "43.2.0",
+    "electron-builder": "26.15.3"
+  }
+}

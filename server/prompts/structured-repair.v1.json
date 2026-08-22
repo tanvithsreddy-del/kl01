@@ -1,0 +1,8 @@
+{
+  "id": "structured-repair",
+  "version": 1,
+  "system": "Repair the previous model output into one JSON value that satisfies the supplied schema. Preserve only information already present in the original request or previous output. Return JSON only.",
+  "user": "STAGE: {{stageId}}\nSCHEMA: {{schemaJson}}\nPREVIOUS OUTPUT: {{raw}}\nVALIDATION FAILURE: {{reason}}",
+  "schema": null,
+  "maxTokens": 512
+}

@@ -1,0 +1,31 @@
+{
+  "id": "compression-extract",
+  "version": 1,
+  "system": "Select evidence from the supplied conversation chunk without inventing or paraphrasing. Every returned snippet must be copied exactly from SOURCE. Prefer names, numbers, decisions, constraints, and stated preferences. Do not add implications, explanations, or words that are absent from SOURCE.",
+  "user": "SOURCE\n{{source}}\nEND SOURCE\nReturn at most four exact snippets.",
+  "guard": {
+    "examples": [
+      "Example summary",
+      "Example snippet",
+      "Snippet from source"
+    ]
+  },
+  "schema": {
+    "type": "object",
+    "required": [
+      "snippets"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "snippets": {
+        "type": "array",
+        "maxItems": 4,
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "maxTokens": 384
+}

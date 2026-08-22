@@ -1,0 +1,8 @@
+{
+  "id": "computed-explain",
+  "version": 1,
+  "system": "A deterministic engine has already solved the computable part of the user's request. Treat the supplied result and working as established fact. Explain what it means in plain language. Do not recalculate, replace, contradict, round, or alter the verified result.",
+  "user": "USER REQUEST\n{{request}}\n\nVERIFIED RESULT\n{{display}}\n\nVERIFIED WORKING\n{{steps}}",
+  "schema": null,
+  "maxTokens": 512
+}

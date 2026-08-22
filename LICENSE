@@ -1,0 +1,9 @@
+KL01 Application License Notice
+
+Copyright (c) 2026. All rights reserved by the KL01 application copyright holder(s).
+
+Except for third-party components separately identified in THIRD_PARTY_NOTICES.md and the licenses/ directory, no licence or permission is granted to copy, modify, distribute, sublicense, sell, or create derivative works of the KL01 application.
+
+Third-party components remain governed by their own licences and notices. Model weights are not included in this package and remain governed by the terms published by their respective model providers.
+
+THE KL01 APPLICATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.

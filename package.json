@@ -1,0 +1,21 @@
+{
+  "name": "kl01",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "20.x || 22.x"
+  },
+  "scripts": {
+    "start": "node start.js",
+    "test": "node --test test/*.test.js",
+    "test:live-web": "node test/live-web-smoke.js",
+    "test:live-questions": "node test/live-question-suite.js",
+    "test:live-effort": "node test/live-effort-suite.js",
+    "test:live-beta-stall": "node test/live-beta-stall-suite.js",
+    "test:live-attachments": "node test/live-attachment-suite.js",
+    "test:live-student-docs": "node test/live-student-document-suite.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

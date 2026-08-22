@@ -1,0 +1,185 @@
+{
+  "version": 2,
+  "records": {
+    "wikipedia.org": {
+      "classes": [
+        "encyclopedia"
+      ],
+      "discoveryRole": "orientation",
+      "evidenceRole": "secondary",
+      "anchorTasks": [
+        "history",
+        "general-reference"
+      ]
+    },
+    "britannica.com": {
+      "classes": [
+        "encyclopedia"
+      ],
+      "discoveryRole": "orientation",
+      "evidenceRole": "secondary",
+      "anchorTasks": [
+        "history",
+        "general-reference"
+      ]
+    },
+    "wikidata.org": {
+      "classes": [
+        "encyclopedia"
+      ],
+      "discoveryRole": "orientation",
+      "evidenceRole": "contextual",
+      "anchorTasks": [
+        "government-public-office",
+        "general-reference"
+      ]
+    },
+    "reuters.com": {
+      "classes": [
+        "wire"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "secondary",
+      "anchorTasks": [
+        "current-news",
+        "finance-business",
+        "government-public-office"
+      ]
+    },
+    "apnews.com": {
+      "classes": [
+        "wire"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "secondary",
+      "anchorTasks": [
+        "current-news",
+        "government-public-office"
+      ]
+    },
+    "afp.com": {
+      "classes": [
+        "wire"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "secondary",
+      "anchorTasks": [
+        "current-news",
+        "government-public-office"
+      ]
+    },
+    "pubmed.ncbi.nlm.nih.gov": {
+      "classes": [
+        "academic-paper"
+      ],
+      "discoveryRole": "evidence-index",
+      "evidenceRole": "secondary",
+      "anchorTasks": [
+        "medicine",
+        "science"
+      ]
+    },
+    "who.int": {
+      "classes": [
+        "international-organization"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "primary-policy",
+      "anchorTasks": [
+        "medicine"
+      ]
+    },
+    "w3.org": {
+      "classes": [
+        "standards-body"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "primary-standard",
+      "anchorTasks": [
+        "software"
+      ]
+    },
+    "ietf.org": {
+      "classes": [
+        "standards-body"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "primary-standard",
+      "anchorTasks": [
+        "software"
+      ]
+    },
+    "rfc-editor.org": {
+      "classes": [
+        "standards-body"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "primary-standard",
+      "anchorTasks": [
+        "software"
+      ]
+    },
+    "developer.mozilla.org": {
+      "classes": [
+        "specialist-publication"
+      ],
+      "discoveryRole": "orientation",
+      "evidenceRole": "secondary",
+      "anchorTasks": [
+        "software"
+      ]
+    },
+    "github.com": {
+      "classes": [
+        "specialist-publication"
+      ],
+      "discoveryRole": "project-index",
+      "evidenceRole": "contextual",
+      "anchorTasks": [
+        "software"
+      ]
+    },
+    "nodejs.org": {
+      "classes": [
+        "official-project"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "primary-project",
+      "anchorTasks": [
+        "software"
+      ]
+    },
+    "sec.gov": {
+      "classes": [
+        "regulator"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "primary-regulatory",
+      "anchorTasks": [
+        "finance-business",
+        "law"
+      ]
+    },
+    "worldbank.org": {
+      "classes": [
+        "international-organization"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "primary-data",
+      "anchorTasks": [
+        "finance-business"
+      ]
+    },
+    "imf.org": {
+      "classes": [
+        "international-organization"
+      ],
+      "discoveryRole": "evidence",
+      "evidenceRole": "primary-data",
+      "anchorTasks": [
+        "finance-business"
+      ]
+    }
+  },
+  "checksum": "84690186b125440a4fa9c9a2091c38d1c866e82eed63ed516da089ad39ee4d67"
+}

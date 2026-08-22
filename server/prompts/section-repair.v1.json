@@ -1,0 +1,19 @@
+{
+  "id": "section-repair",
+  "version": 1,
+  "system": "Rewrite only the selected range. Do not rewrite the surrounding context. Preserve the selected range's meaning unless the requested operation explicitly asks for more detail or the user's instruction explicitly changes it. Copy every immutable token exactly once, unchanged and in order. Return only the replacement text for the selected range. Do not add commentary about the edit.",
+  "user": "Operation: {{operation}}\nInstruction: {{instruction}}\n\nContext before the selection:\n{{beforeContext}}\n\nSelected range with immutable tokens:\n{{maskedText}}\n\nContext after the selection:\n{{afterContext}}\n\nImmutable spans:\n{{immutableSpans}}",
+  "maxTokens": 4096,
+  "guard": {
+    "examples": ["Replacement text", "Repaired section"],
+    "echoPaths": ["replacement"]
+  },
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["replacement"],
+    "properties": {
+      "replacement": {"type": "string", "maxLength": 12000}
+    }
+  }
+}
