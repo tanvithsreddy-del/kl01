@@ -9,49 +9,70 @@ on:
       - .github/workflows/verify-downloads.yml
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Inspect published release
+      - name: Inspect release and verify public downloads
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          set -euo pipefail
-          echo "Release metadata"
-          gh api "repos/${GITHUB_REPOSITORY}/releases/tags/pre-release" \
-            --jq '{tag_name,name,draft,prerelease,published_at,assets:[.assets[]|{name,size,state,browser_download_url}]}'
+          set +e
+          report="download-verification.txt"
+          : > "$report"
+          echo "KL01 public download verification" | tee -a "$report"
+          date -u '+UTC %Y-%m-%d %H:%M:%S' | tee -a "$report"
+          echo | tee -a "$report"
 
-      - name: Verify unauthenticated public asset URLs
-        shell: bash
-        run: |
-          set -euo pipefail
-          urls=(
-            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta%20Setup.exe"
-            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta%20Portable.exe"
-            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta%20Windows.zip"
-            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta.AppImage"
-            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta%20Linux.tar.gz"
-          )
-          for url in "${urls[@]}"; do
-            echo "Checking $url"
-            ok=0
-            for attempt in 1 2 3 4 5 6; do
-              code=$(curl -A 'Mozilla/5.0' -sS -L -I -o /dev/null -w '%{http_code}' "$url" || true)
-              echo "Attempt $attempt, HTTP $code"
-              if [ "$code" = "200" ] || [ "$code" = "206" ]; then
-                ok=1
-                break
-              fi
-              sleep 5
-            done
-            if [ "$ok" -ne 1 ]; then
-              echo "Public direct download failed, $url"
-              exit 1
+          echo "RELEASE" | tee -a "$report"
+          gh api "repos/${GITHUB_REPOSITORY}/releases/tags/pre-release" \
+            --jq '{tag_name,name,draft,prerelease,published_at,html_url,assets:[.assets[]|{name,size,state,browser_download_url}]}' \
+            | tee -a "$report"
+          api_status=${PIPESTATUS[0]}
+          echo | tee -a "$report"
+
+          failed=0
+          if [ "$api_status" -ne 0 ]; then
+            echo "Release API lookup failed" | tee -a "$report"
+            failed=1
+          else
+            mapfile -t urls < <(gh api "repos/${GITHUB_REPOSITORY}/releases/tags/pre-release" --jq '.assets[].browser_download_url')
+            echo "PUBLIC URL CHECKS" | tee -a "$report"
+            if [ "${#urls[@]}" -eq 0 ]; then
+              echo "No release assets returned by GitHub API" | tee -a "$report"
+              failed=1
             fi
-          done
-          echo "All public direct download URLs are reachable."
+            for url in "${urls[@]}"; do
+              code="000"
+              for attempt in 1 2 3 4 5 6; do
+                code=$(curl -A 'Mozilla/5.0' -sS -L -I -o /dev/null -w '%{http_code}' "$url" || true)
+                if [ "$code" = "200" ] || [ "$code" = "206" ]; then
+                  break
+                fi
+                sleep 5
+              done
+              echo "$code $url" | tee -a "$report"
+              if [ "$code" != "200" ] && [ "$code" != "206" ]; then
+                failed=1
+              fi
+            done
+          fi
+
+          echo | tee -a "$report"
+          if [ "$failed" -eq 0 ]; then
+            echo "RESULT PASS" | tee -a "$report"
+          else
+            echo "RESULT FAIL" | tee -a "$report"
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$report"
+          git commit -m 'Record KL01 public download verification' || true
+          git push origin HEAD:main
+
+          exit "$failed"
