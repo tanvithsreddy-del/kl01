@@ -7,6 +7,12 @@ on:
       - main
     paths:
       - .github/workflows/publish-pre-release.yml
+      - .release-trigger
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .release-trigger
 
 permissions:
   contents: write
@@ -166,6 +172,8 @@ jobs:
       - linux
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      RELEASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.sha }}
     steps:
       - name: Check out source
         uses: actions/checkout@v4
@@ -185,13 +193,13 @@ jobs:
           find release-assets -maxdepth 1 -type f -printf '%f\n' | sort
           sha256sum release-assets/*
 
-      - name: Point stable pre-release tag at this source commit
+      - name: Point stable pre-release tag at source commit
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git tag -f pre-release "$GITHUB_SHA"
+          git tag -f pre-release "$RELEASE_SHA"
           git push origin refs/tags/pre-release --force
 
       - name: Create or update GitHub pre-release
@@ -215,7 +223,7 @@ jobs:
             gh release edit pre-release --title 'KL01 Pre Release' --notes "$notes" --prerelease
             gh release upload pre-release release-assets/* --clobber
           else
-            gh release create pre-release release-assets/* --title 'KL01 Pre Release' --notes "$notes" --prerelease --target "$GITHUB_SHA"
+            gh release create pre-release release-assets/* --title 'KL01 Pre Release' --notes "$notes" --prerelease --target "$RELEASE_SHA"
           fi
 
       - name: Print permanent direct download URLs
