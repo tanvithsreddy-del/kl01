@@ -1,0 +1,239 @@
+name: Publish KL01 Pre Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/publish-pre-release.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kl01-pre-release
+  cancel-in-progress: false
+
+jobs:
+  windows:
+    name: Build Windows
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+
+      - name: Run source tests
+        shell: pwsh
+        run: npm test
+
+      - name: Install desktop dependencies
+        shell: pwsh
+        working-directory: desktop
+        run: npm ci
+
+      - name: Fetch verified llama.cpp Windows runtime
+        id: runtime
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $url = 'https://github.com/ggml-org/llama.cpp/releases/download/b10107/llama-b10107-bin-win-cpu-x64.zip'
+          $archive = Join-Path $env:RUNNER_TEMP 'llama-win.zip'
+          $extract = Join-Path $env:RUNNER_TEMP 'llama-win'
+          Invoke-WebRequest -Uri $url -OutFile $archive
+          if ((Get-Item $archive).Length -ne 18213827) { throw 'Unexpected Windows runtime size.' }
+          $hash = (Get-FileHash $archive -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($hash -ne '52133a0a5a8f6035b1bdd2f89c3425ea8b742413d9bdb9a2dee30e3a1681b18c') { throw 'Windows runtime SHA256 mismatch.' }
+          Expand-Archive -Path $archive -DestinationPath $extract -Force
+          $server = Get-ChildItem $extract -Recurse -File -Filter 'llama-server.exe' | Select-Object -First 1
+          if (-not $server) { throw 'llama-server.exe not found after extraction.' }
+          "dir=$($server.Directory.FullName)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Build Windows packages
+        shell: pwsh
+        working-directory: desktop
+        env:
+          KL01_RUNTIME_DIR: ${{ steps.runtime.outputs.dir }}
+        run: npm run pack:win
+
+      - name: Verify Windows outputs
+        shell: pwsh
+        run: |
+          $files = @(
+            'desktop/dist/KL01 Pre Beta Setup.exe',
+            'desktop/dist/KL01 Pre Beta Portable.exe',
+            'desktop/dist/KL01 Pre Beta Windows.zip'
+          )
+          foreach ($file in $files) {
+            if (-not (Test-Path $file)) { throw "Missing $file" }
+            if ((Get-Item $file).Length -lt 50000000) { throw "Suspiciously small package $file" }
+            Get-FileHash $file -Algorithm SHA256
+          }
+
+      - name: Upload Windows release files
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-release
+          if-no-files-found: error
+          compression-level: 0
+          path: |
+            desktop/dist/KL01 Pre Beta Setup.exe
+            desktop/dist/KL01 Pre Beta Portable.exe
+            desktop/dist/KL01 Pre Beta Windows.zip
+
+  linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+
+      - name: Run source tests
+        run: npm test
+
+      - name: Install desktop dependencies
+        working-directory: desktop
+        run: npm ci
+
+      - name: Fetch verified llama.cpp Linux runtime
+        id: runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          url='https://github.com/ggml-org/llama.cpp/releases/download/b10107/llama-b10107-bin-ubuntu-x64.tar.gz'
+          archive="$RUNNER_TEMP/llama-linux.tar.gz"
+          extract="$RUNNER_TEMP/llama-linux"
+          curl -fL "$url" -o "$archive"
+          test "$(stat -c%s "$archive")" = '16275561'
+          echo 'afe1ae0b706c4a0830b218a9249037b7a6cc723f81deb78825662128b25453e6  '"$archive" | sha256sum -c -
+          mkdir -p "$extract"
+          tar -xzf "$archive" -C "$extract"
+          server="$(find "$extract" -type f -name llama-server -print -quit)"
+          test -n "$server"
+          runtime_dir="$(dirname "$server")"
+          echo "dir=$runtime_dir" >> "$GITHUB_OUTPUT"
+
+      - name: Build Linux packages
+        working-directory: desktop
+        env:
+          KL01_RUNTIME_DIR: ${{ steps.runtime.outputs.dir }}
+        run: npm run pack:linux
+
+      - name: Verify Linux outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          files=(
+            'desktop/dist/KL01 Pre Beta.AppImage'
+            'desktop/dist/KL01 Pre Beta Linux.tar.gz'
+          )
+          for file in "${files[@]}"; do
+            test -f "$file"
+            test "$(stat -c%s "$file")" -gt 50000000
+            sha256sum "$file"
+          done
+
+      - name: Upload Linux release files
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-release
+          if-no-files-found: error
+          compression-level: 0
+          path: |
+            desktop/dist/KL01 Pre Beta.AppImage
+            desktop/dist/KL01 Pre Beta Linux.tar.gz
+
+  release:
+    name: Publish stable download URLs
+    needs:
+      - windows
+      - linux
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download release files
+        uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+
+      - name: Show release files and hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          find release-assets -maxdepth 1 -type f -printf '%f\n' | sort
+          sha256sum release-assets/*
+
+      - name: Point stable pre-release tag at this source commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git tag -f pre-release "$GITHUB_SHA"
+          git push origin refs/tags/pre-release --force
+
+      - name: Create or update GitHub pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          notes=$(cat <<'EOF'
+          KL01 Pre Release
+
+          Windows is the recommended build.
+
+          These packages are unsigned. No GGUF model is bundled. Local models are downloaded separately inside KL01.
+
+          Source is available in this repository.
+          EOF
+          )
+
+          if gh release view pre-release >/dev/null 2>&1; then
+            gh release edit pre-release --title 'KL01 Pre Release' --notes "$notes" --prerelease
+            gh release upload pre-release release-assets/* --clobber
+          else
+            gh release create pre-release release-assets/* --title 'KL01 Pre Release' --notes "$notes" --prerelease --target "$GITHUB_SHA"
+          fi
+
+      - name: Print permanent direct download URLs
+        shell: bash
+        run: |
+          cat <<'EOF'
+          Windows setup:
+          https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01%20Pre%20Beta%20Setup.exe
+
+          Windows portable:
+          https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01%20Pre%20Beta%20Portable.exe
+
+          Windows zip:
+          https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01%20Pre%20Beta%20Windows.zip
+
+          Linux AppImage:
+          https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01%20Pre%20Beta.AppImage
+
+          Linux tar.gz:
+          https://github.com/tanvithsreddy-del/kl01/releases/download/pre-release/KL01%20Pre%20Beta%20Linux.tar.gz
+          EOF
