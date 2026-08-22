@@ -1,0 +1,57 @@
+name: Verify KL01 Public Downloads
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/verify-downloads.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Inspect published release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Release metadata"
+          gh api "repos/${GITHUB_REPOSITORY}/releases/tags/pre-release" \
+            --jq '{tag_name,name,draft,prerelease,published_at,assets:[.assets[]|{name,size,state,browser_download_url}]}'
+
+      - name: Verify unauthenticated public asset URLs
+        shell: bash
+        run: |
+          set -euo pipefail
+          urls=(
+            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta%20Setup.exe"
+            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta%20Portable.exe"
+            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta%20Windows.zip"
+            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta.AppImage"
+            "https://github.com/${GITHUB_REPOSITORY}/releases/download/pre-release/KL01%20Pre%20Beta%20Linux.tar.gz"
+          )
+          for url in "${urls[@]}"; do
+            echo "Checking $url"
+            ok=0
+            for attempt in 1 2 3 4 5 6; do
+              code=$(curl -A 'Mozilla/5.0' -sS -L -I -o /dev/null -w '%{http_code}' "$url" || true)
+              echo "Attempt $attempt, HTTP $code"
+              if [ "$code" = "200" ] || [ "$code" = "206" ]; then
+                ok=1
+                break
+              fi
+              sleep 5
+            done
+            if [ "$ok" -ne 1 ]; then
+              echo "Public direct download failed, $url"
+              exit 1
+            fi
+          done
+          echo "All public direct download URLs are reachable."
